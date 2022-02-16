@@ -1,9 +1,9 @@
-"""Modulo de tipos de pokemons
+"""Modulo para controle dos tipos
     """
 
 
 class Tipos:
-    """Classe que contem os tipos de pokemons
+    """Classe que controla os tipos de pokemons
     """
     aco = 'aco'.capitalize()
     agua = 'agua'.capitalize()
@@ -23,4 +23,3 @@ class Tipos:
     terra = 'terra'.capitalize()
     veneno = 'veneno'.capitalize()
     voador = 'voador'.capitalize()
-    desconhecido = 'desconhecido'.capitalize()
