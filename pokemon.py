@@ -125,3 +125,12 @@ class PokemonEletrico(Pokemon, classes.Eletrico):
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo eletrico
     """
+
+
+class PokemonFantasma(Pokemon, classes.Fantasma):
+    """Classe de pokemon fantasma
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo fantasma
+        classes (str): Classe do pokemon
+    """
