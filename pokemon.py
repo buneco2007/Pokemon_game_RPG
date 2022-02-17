@@ -1,9 +1,10 @@
 """Modulo de pokemons"""
 
 import classes
+import tipos
 
 
-class Pokemon(classes.Aco):
+class Pokemon(classes.Aco, classes.Agua, classes.Bicho):
     """[Classe master pokemon]
     """
 
@@ -75,11 +76,11 @@ class Pokemon(classes.Aco):
         """
         if self.tipo in pokemon.forte:
             return 2
-        if self.tipo in pokemon.normal:
-            return 1
+        if self.tipo in pokemon.imune:
+            return 0
         if self.tipo in pokemon.fraco:
             return 0.5
-        return 0
+        return 1
 
 
 class PokemonAco(Pokemon):
@@ -88,10 +89,29 @@ class PokemonAco(Pokemon):
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo aco
     """
-    tipo = 'aco'.capitalize()
+    tipo = tipos.Tipos.aco
+
+
+class PokemonAgua(Pokemon):
+    """Classe de pokemon agua
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo agua
+    """
+    tipo: str = tipos.Tipos.agua
+
+
+class PokemonBicho(Pokemon):
+    """Classe de pokemon bicho
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo bicho
+    """
+    tipo: str = tipos.Tipos.bicho
 
 
 meu_pokemon = PokemonAco('Meu pokemon')
-pokemon_amigo = PokemonAco('Pokemon do amigo')
+amigo_pokemon = PokemonAgua('Amigo pokemon')
 
-meu_pokemon.atacar(pokemon_amigo)
+print(meu_pokemon)
+print(amigo_pokemon)
