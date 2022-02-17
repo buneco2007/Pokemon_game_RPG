@@ -184,3 +184,12 @@ class PokemonNormal(Pokemon, classes.Normal):
         Pokemon (Pomemon): Instancia um pokemon do tipo normal
         classes (str): Classe do pokemon
     """
+
+
+class PokemonPlanta(Pokemon, classes.Planta):
+    """Classe de pokemon planta
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo planta
+        classes (str): Classe do pokemon
+    """

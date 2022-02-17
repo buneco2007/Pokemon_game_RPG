@@ -147,3 +147,16 @@ class Normal(tipos.Tipos):
     fraco: list[str] = [tipos.Tipos.aco, tipos.Tipos.rocha]
     forte: list[str] = []
     imune: list[str] = [tipos.Tipos.fantasma]
+
+
+class Planta(tipos.Tipos):
+    """Classe de pokemon planta
+
+    Args:
+        tipos (str): Tipo do pokemon
+    """
+    tipo: str = tipos.Tipos.planta
+    fraco: list[str] = [tipos.Tipos.aco, tipos.Tipos.bicho, tipos.Tipos.dragao,
+                        tipos.Tipos.fogo, tipo, tipos.Tipos.veneno, tipos.Tipos.voador]
+    forte: list[str] = [tipos.Tipos.agua, tipos.Tipos.rocha, tipos.Tipos.terra]
+    imune: list[str] = []
