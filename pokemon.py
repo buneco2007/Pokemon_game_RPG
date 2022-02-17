@@ -175,3 +175,12 @@ class PokemonLuta(Pokemon, classes.Luta):
         Pokemon (Pokemon): Instancia um pokemon do tipo luta
         classes (str): Classe do pokemon
     """
+
+
+class PokemonNormal(Pokemon, classes.Normal):
+    """Classe de pokemon normal
+
+    Args:
+        Pokemon (Pomemon): Instancia um pokemon do tipo normal
+        classes (str): Classe do pokemon
+    """
