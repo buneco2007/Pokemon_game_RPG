@@ -1,20 +1,22 @@
 """Modulo de pokemons"""
 
-import classes
 import tipos
+import classes
 
 
-class Pokemon(classes.Aco, classes.Agua, classes.Bicho, classes.Dragao):
+class Pokemon():
     """[Classe master pokemon]
     """
 
     def __init__(self, especie: str,
                  sangue: float = 100, lvl: int = 1, const: float = 1,
-                 nome: str = None, ataque: float = 10, defesa: float = 2) -> None:
+                 nome: str = None, ataque: float = 10, defesa: float = 2, tipo: str = tipos.Tipos.aco) -> None:
         self.especie = especie.capitalize()
         self.ataque = ataque
         self.defesa = defesa
         self.lvl = lvl
+        if tipo:
+            self.tipo = tipo
         self.const = const
         if nome:
             self.nome = nome
@@ -46,6 +48,7 @@ class Pokemon(classes.Aco, classes.Agua, classes.Bicho, classes.Dragao):
             print('Seu ataque efetou normalmente!!')
         else:
             print('Seu ataque eh muito efetivo!!!')
+        print(efetivi)
 
     def receber_dano(self, dano: float, efetividade: float):
         """[Funcao para receber dano]
@@ -83,7 +86,7 @@ class Pokemon(classes.Aco, classes.Agua, classes.Bicho, classes.Dragao):
         return 1
 
 
-class PokemonAco(Pokemon):
+class PokemonAco(Pokemon, classes.Aco):
     """Classe de pokemon de aco
 
     Args:
@@ -92,7 +95,7 @@ class PokemonAco(Pokemon):
     tipo = tipos.Tipos.aco
 
 
-class PokemonAgua(Pokemon):
+class PokemonAgua(Pokemon, classes.Agua):
     """Classe de pokemon agua
 
     Args:
@@ -101,7 +104,7 @@ class PokemonAgua(Pokemon):
     tipo: str = tipos.Tipos.agua
 
 
-class PokemonBicho(Pokemon):
+class PokemonBicho(Pokemon, classes.Bicho):
     """Classe de pokemon bicho
 
     Args:
@@ -110,9 +113,16 @@ class PokemonBicho(Pokemon):
     tipo: str = tipos.Tipos.bicho
 
 
-class PokemonDragao(Pokemon):
+class PokemonDragao(Pokemon, classes.Dragao):
     """Classe de pokemon dragao
 
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo dragao
     """
+    tipo: str = tipos.Tipos.dragao
+
+
+meu_pokemon = PokemonDragao('Meu pokemon')
+amigo_pokemon = PokemonDragao('Amigo pokemon')
+
+print(meu_pokemon.forte)
