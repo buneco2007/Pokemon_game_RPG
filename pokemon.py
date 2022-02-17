@@ -4,7 +4,7 @@ import classes
 import tipos
 
 
-class Pokemon(classes.Aco, classes.Agua, classes.Bicho):
+class Pokemon(classes.Aco, classes.Agua, classes.Bicho, classes.Dragao):
     """[Classe master pokemon]
     """
 
@@ -110,8 +110,9 @@ class PokemonBicho(Pokemon):
     tipo: str = tipos.Tipos.bicho
 
 
-meu_pokemon = PokemonAco('Meu pokemon')
-amigo_pokemon = PokemonAgua('Amigo pokemon')
+class PokemonDragao(Pokemon):
+    """Classe de pokemon dragao
 
-print(meu_pokemon)
-print(amigo_pokemon)
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo dragao
+    """
