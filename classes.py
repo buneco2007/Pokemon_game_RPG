@@ -94,3 +94,16 @@ class Fogo(tipos.Tipos):
     forte: list[str] = [tipos.Tipos.aco, tipos.Tipos.bicho,
                         tipos.Tipos.gelo, tipos.Tipos.planta, ]
     imune: list[str] = []
+
+
+class Fada(tipos.Tipos):
+    """Classe de pokemon fada
+
+    Args:
+        tipos (str): Tipo de pokemon
+    """
+    tipo: str = tipos.Tipos.fada
+    fraco: list[str] = [tipos.Tipos.aco, tipos.Tipos.fogo, tipos.Tipos.veneno]
+    forte: list[str] = [tipos.Tipos.dragao,
+                        tipos.Tipos.luta, tipos.Tipos.sinistro]
+    imune: list[str] = []
