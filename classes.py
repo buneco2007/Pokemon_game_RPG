@@ -107,3 +107,31 @@ class Fada(tipos.Tipos):
     forte: list[str] = [tipos.Tipos.dragao,
                         tipos.Tipos.luta, tipos.Tipos.sinistro]
     imune: list[str] = []
+
+
+class Gelo(tipos.Tipos):
+    """Classe de pokemon gelo
+
+    Args:
+        tipos (str): Tipo do pokemon
+    """
+    tipo: str = tipos.Tipos.gelo
+    fraco: list[str] = [tipos.Tipos.aco,
+                        tipos.Tipos.agua, tipos.Tipos.fogo, tipo]
+    forte: list[str] = [tipos.Tipos.dragao, tipos.Tipos.planta,
+                        tipos.Tipos.terra, tipos.Tipos.voador]
+    imune: list[str] = []
+
+
+class Luta(tipos.Tipos):
+    """Classe de pokemon luta
+
+    Args:
+        tipos (str): Tipo do pokemon
+    """
+    tipo: str = tipos.Tipos.luta
+    fraco: list[str] = [tipos.Tipos.bicho, tipos.Tipos.fada,
+                        tipos.Tipos.psiquico, tipos.Tipos.veneno, tipos.Tipos.voador]
+    forte: list[str] = [tipos.Tipos.aco, tipos.Tipos.gelo,
+                        tipos.Tipos.normal, tipos.Tipos.rocha, tipos.Tipos.sinistro]
+    imune: list[str] = [tipos.Tipos.fantasma]

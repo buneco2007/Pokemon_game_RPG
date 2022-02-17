@@ -88,10 +88,11 @@ class Pokemon():
 
 
 class PokemonAco(Pokemon, classes.Aco):
-    """Classe de pokemon de aco
+    """Classe de pokemon aco
 
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo aco
+        classes (str): Classe do pokemon
     """
 
 
@@ -100,6 +101,7 @@ class PokemonAgua(Pokemon, classes.Agua):
 
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo agua
+        classes (str): Classe do pokemon
     """
 
 
@@ -108,6 +110,7 @@ class PokemonBicho(Pokemon, classes.Bicho):
 
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo bicho
+        classes (str): Classe do pokemon
     """
 
 
@@ -116,6 +119,7 @@ class PokemonDragao(Pokemon, classes.Dragao):
 
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo dragao
+        classes (str): Classe do pokemon
     """
 
 
@@ -124,6 +128,7 @@ class PokemonEletrico(Pokemon, classes.Eletrico):
 
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo eletrico
+        classes (str): Classe do pokemon
     """
 
 
@@ -150,5 +155,23 @@ class PokemonFada(Pokemon, classes.Fada):
 
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo fada
-        classes (str): Classe de pokemon
+        classes (str): Classe do pokemon
+    """
+
+
+class PokemonGelo(Pokemon, classes.Gelo):
+    """Classe de pokemon gelo
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo gelo
+        classes (str): Classe do pokemon
+    """
+
+
+class PokemonLuta(Pokemon, classes.Luta):
+    """Classe de pokemon luta
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo luta
+        classes (str): Classe do pokemon
     """
