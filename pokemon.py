@@ -134,3 +134,12 @@ class PokemonFantasma(Pokemon, classes.Fantasma):
         Pokemon (Pokemon): Instancia um pokemon do tipo fantasma
         classes (str): Classe do pokemon
     """
+
+
+class PokemonFogo(Pokemon, classes.Fogo):
+    """Classe de pokemon de fogo
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo fogo
+        classes (str): Classe do pokemon
+    """
