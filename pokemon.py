@@ -119,7 +119,9 @@ class PokemonDragao(Pokemon, classes.Dragao):
     """
 
 
-meu_pokemon = PokemonDragao('Meu pokemon')
-amigo_pokemon = PokemonDragao('Amigo pokemon')
+class PokemonEletrico(Pokemon, classes.Eletrico):
+    """Classe de pokemon eletrico
 
-print(meu_pokemon.forte)
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo eletrico
+    """

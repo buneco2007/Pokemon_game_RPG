@@ -56,3 +56,15 @@ class Dragao(tipos.Tipos):
     fraco: list[str] = [tipos.Tipos.aco]
     forte: list[str] = [tipos.Tipos.dragao]
     imune: list[str] = [tipos.Tipos.fada]
+
+
+class Eletrico(tipos.Tipos):
+    """Classe de pokemon eletrico
+
+    Args:
+        tipos (str): Tipo de pokemon
+    """
+    tipo: str = tipos.Tipos.eletrico
+    fraco: list[str] = [tipos.Tipos.dragao, tipo, tipos.Tipos.planta]
+    forte: list[str] = [tipos.Tipos.agua, tipos.Tipos.voador]
+    imune: list[str] = [tipos.Tipos.terra]
