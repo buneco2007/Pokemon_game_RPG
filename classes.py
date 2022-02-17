@@ -10,6 +10,7 @@ class Aco(tipos.Tipos):
     Args:
         tipos (Str): Tipo do pokemon
     """
+    tipo = tipos.Tipos.aco
     fraco: list[str] = [tipos.Tipos.aco, tipos.Tipos.agua, tipos.Tipos.eletrico,
                         tipos.Tipos.fogo]
     forte: list[str] = [tipos.Tipos.fada, tipos.Tipos.gelo,
@@ -23,6 +24,7 @@ class Agua(tipos.Tipos):
     Args:
         tipos (str): Tipo de pokemon
     """
+    tipo: str = tipos.Tipos.agua
     fraco: list[str] = [tipos.Tipos.agua,
                         tipos.Tipos.dragao, tipos.Tipos.planta]
     forte: list[str] = [tipos.Tipos.fogo, tipos.Tipos.rocha, tipos.Tipos.terra]
@@ -35,6 +37,7 @@ class Bicho(tipos.Tipos):
     Args:
         tipos (str): Tipo de pokemon
     """
+    tipo: str = tipos.Tipos.bicho
     fraco: list[str] = [tipos.Tipos.aco, tipos.Tipos.fantasma, tipos.Tipos.fogo,
                         tipos.Tipos.fada, tipos.Tipos.luta, tipos.Tipos.veneno,
                         tipos.Tipos.voador]
@@ -49,6 +52,7 @@ class Dragao(tipos.Tipos):
     Args:
         tipos (str): Tipo de pokemon
     """
+    tipo: str = tipos.Tipos.dragao
     fraco: list[str] = [tipos.Tipos.aco]
     forte: list[str] = [tipos.Tipos.dragao]
     imune: list[str] = [tipos.Tipos.fada]

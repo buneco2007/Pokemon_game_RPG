@@ -10,7 +10,8 @@ class Pokemon():
 
     def __init__(self, especie: str,
                  sangue: float = 100, lvl: int = 1, const: float = 1,
-                 nome: str = None, ataque: float = 10, defesa: float = 2, tipo: str = tipos.Tipos.aco) -> None:
+                 nome: str = None, ataque: float = 10, defesa: float = 2,
+                 tipo: str = tipos.Tipos.aco) -> None:
         self.especie = especie.capitalize()
         self.ataque = ataque
         self.defesa = defesa
@@ -92,7 +93,6 @@ class PokemonAco(Pokemon, classes.Aco):
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo aco
     """
-    tipo = tipos.Tipos.aco
 
 
 class PokemonAgua(Pokemon, classes.Agua):
@@ -101,7 +101,6 @@ class PokemonAgua(Pokemon, classes.Agua):
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo agua
     """
-    tipo: str = tipos.Tipos.agua
 
 
 class PokemonBicho(Pokemon, classes.Bicho):
@@ -110,7 +109,6 @@ class PokemonBicho(Pokemon, classes.Bicho):
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo bicho
     """
-    tipo: str = tipos.Tipos.bicho
 
 
 class PokemonDragao(Pokemon, classes.Dragao):
@@ -119,7 +117,6 @@ class PokemonDragao(Pokemon, classes.Dragao):
     Args:
         Pokemon (Pokemon): Instancia um pokemon do tipo dragao
     """
-    tipo: str = tipos.Tipos.dragao
 
 
 meu_pokemon = PokemonDragao('Meu pokemon')
