@@ -160,3 +160,80 @@ class Planta(tipos.Tipos):
                         tipos.Tipos.fogo, tipo, tipos.Tipos.veneno, tipos.Tipos.voador]
     forte: list[str] = [tipos.Tipos.agua, tipos.Tipos.rocha, tipos.Tipos.terra]
     imune: list[str] = []
+
+
+class Psiquico(tipos.Tipos):
+    """Classe de pokemon psiquico
+
+    Args:
+        tipos (str): Tipo do pokemon
+    """
+    tipo: str = tipos.Tipos.psiquico
+    fraco: list[str] = [tipos.Tipos.aco, tipo]
+    forte: list[str] = [tipos.Tipos.luta, tipos.Tipos.veneno]
+    imune: list[str] = [tipos.Tipos.sinistro]
+
+
+class Rocha(tipos.Tipos):
+    """Classe de pokemon psiquico
+
+    Args:
+        tipos (str): Tipo do pokemon
+    """
+    tipo: str = tipos.Tipos.psiquico
+    fraco: list[str] = [tipos.Tipos.aco, tipos.Tipos.luta, tipos.Tipos.terra]
+    forte: list[str] = [tipos.Tipos.bicho, tipos.Tipos.fogo,
+                        tipos.Tipos.gelo, tipos.Tipos.voador]
+    imune: list[str] = []
+
+
+class Sinistro(tipos.Tipos):
+    """Classe de pokemon psiquico
+
+    Args:
+        tipos (str): Tipo do pokemon
+    """
+    tipo: str = tipos.Tipos.psiquico
+    fraco: list[str] = [tipos.Tipos.fada, tipos.Tipos.normal, tipo]
+    forte: list[str] = [tipos.Tipos.fantasma, tipos.Tipos.psiquico]
+    imune: list[str] = []
+
+
+class Terra(tipos.Tipos):
+    """Classe de pokemon psiquico
+
+    Args:
+        tipos (str): Tipo do pokemon
+    """
+    tipo: str = tipos.Tipos.psiquico
+    fraco: list[str] = [tipos.Tipos.bicho, tipos.Tipos.planta]
+    forte: list[str] = [tipos.Tipos.aco, tipos.Tipos.eletrico, tipos.Tipos.fogo,
+                        tipos.Tipos.rocha, tipos.Tipos.veneno]
+    imune: list[str] = [tipos.Tipos.voador]
+
+
+class Veneno(tipos.Tipos):
+    """Classe de pokemon psiquico
+
+    Args:
+        tipos (str): Tipo do pokemon
+    """
+    tipo: str = tipos.Tipos.psiquico
+    fraco: list[str] = [tipos.Tipos.fantasma,
+                        tipos.Tipos.rocha, tipos.Tipos.terra, tipo]
+    forte: list[str] = [tipos.Tipos.fada, tipos.Tipos.planta]
+    imune: list[str] = [tipos.Tipos.aco]
+
+
+class Voador(tipos.Tipos):
+    """Classe de pokemon psiquico
+
+    Args:
+        tipos (str): Tipo do pokemon
+    """
+    tipo: str = tipos.Tipos.psiquico
+    fraco: list[str] = [tipos.Tipos.aco,
+                        tipos.Tipos.eletrico, tipos.Tipos.rocha]
+    forte: list[str] = [tipos.Tipos.bicho,
+                        tipos.Tipos.luta, tipos.Tipos.planta]
+    imune: list[str] = []

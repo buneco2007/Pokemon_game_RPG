@@ -193,3 +193,57 @@ class PokemonPlanta(Pokemon, classes.Planta):
         Pokemon (Pokemon): Instancia um pokemon do tipo planta
         classes (str): Classe do pokemon
     """
+
+
+class PokemonPsiquico(Pokemon, classes.Psiquico):
+    """Classe de pokemon Psiquico
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo Psiquico
+        classes (str): Classe do pokemon
+    """
+
+
+class PokemonRocha(Pokemon, classes.Rocha):
+    """Classe de pokemon Rocha
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo Rocha
+        classes (str): Classe do pokemon
+    """
+
+
+class PokemonSinistro(Pokemon, classes.Sinistro):
+    """Classe de pokemon Sinistro
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo Sinistro
+        classes (str): Classe do pokemon
+    """
+
+
+class PokemonTerra(Pokemon, classes.Terra):
+    """Classe de pokemon Terra
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo Terra
+        classes (str): Classe do pokemon
+    """
+
+
+class PokemonVeneno(Pokemon, classes.Veneno):
+    """Classe de pokemon Veneno
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo Veneno
+        classes (str): Classe do pokemon
+    """
+
+
+class PokemonVoador(Pokemon, classes.Voador):
+    """Classe de pokemon planta
+
+    Args:
+        Pokemon (Pokemon): Instancia um pokemon do tipo Voador
+        classes (str): Classe do pokemon
+    """
