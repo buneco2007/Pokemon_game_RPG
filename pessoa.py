@@ -1,8 +1,7 @@
 """Modulo player
     """
-
-
 from typing import Any
+from items import MochilaPequena
 
 
 class Pessoa(object):
@@ -12,7 +11,8 @@ class Pessoa(object):
         object (_type_): _description_
     """
 
-    def __init__(self, nome: str = None, pokemons=None):
+    def __init__(self, nome: str = None, pokemons=None, items=None):
+        mochila: object = MochilaPequena()
         if nome:
             self.nome = nome
         else:
@@ -21,6 +21,8 @@ class Pessoa(object):
             self.pokemons = list[Any]
         else:
             self.pokemons = pokemons
+        if items is None:
+            self.items: list[Any] = [mochila]
 
     def __str__(self) -> str:
         return f'{self.nome}'
@@ -32,10 +34,18 @@ class Pessoa(object):
             Lista com todos os pokemons
         """
         if self.pokemons:
+            print(f'Pokemons de {self.nome}:')
             for pokemon in self.pokemons:
                 print(pokemon)
         else:
-            print('Voce nao tem nenhum pokemon')
+            print(f'{self} nao tem nenhum pokemon!!!')
+
+    def mostrar_items(self):
+        """mostrar_items Metodo para mostrar todos os items
+        """
+        if self.items:
+            for item in self.items:
+                print(item)
 
 
 class Player(Pessoa):
