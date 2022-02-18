@@ -1,8 +1,6 @@
 """ Modulo de items
     """
 
-from typing import Any
-
 
 class Mochila(object):
     """Bag Classe master de mochila
@@ -11,11 +9,12 @@ class Mochila(object):
         object -- Objeto
     """
 
-    def __init__(self, nome='Mochila', espacos=5, items=None):
+    def __init__(self, nome: str = 'Mochila', espacos: int = 5,
+                 items=None):
         self.nome = nome
         self.espacos = espacos
         if items is None:
-            self.items = list[Any]
+            self.items = []
         else:
             self.items = items
 
@@ -50,4 +49,5 @@ class MochilaPequena(Mochila):
     espacos: int = 10
 
     def __str__(self) -> str:
-        return f'{self.nome}'
+        ocupado = len(self.items)
+        return f'{self.nome} {ocupado}/{self.espacos}'
