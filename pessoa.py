@@ -19,17 +19,23 @@ class Pessoa(object):
             self.nome = 'Desconhecido'
         if pokemons is None:
             self.pokemons = list[Any]
+        else:
+            self.pokemons = pokemons
 
     def __str__(self) -> str:
         return f'{self.nome}'
 
-    def capturar(self, pokemon):
-        """capturar Funcao para capturar pokemon
+    def mostrar_pokemons(self):
+        """mostrar_pokemons Funcao para mostrar os pokemons
 
-        Arguments:
-            pokemon -- Informar o pokemon
+        Returns:
+            Lista com todos os pokemons
         """
-        pass
+        if self.pokemons:
+            for pokemon in self.pokemons:
+                print(pokemon)
+        else:
+            print('Voce nao tem nenhum pokemon')
 
 
 class Player(Pessoa):
@@ -38,6 +44,15 @@ class Player(Pessoa):
     Arguments:
         Pessoa -- Filho da classe
     """
+
+    def capturar(self, pokemon):
+        """capturar Funcao para capturar pokemon
+
+        Arguments:
+            pokemon -- Informar o pokemon
+        """
+        self.pokemons.append(pokemon)
+        print(f'{self} capturou {pokemon}!')
 
 
 class NPC(Pessoa):
