@@ -23,6 +23,14 @@ class Pessoa(object):
     def __str__(self) -> str:
         return f'{self.nome}'
 
+    def capturar(self, pokemon):
+        """capturar Funcao para capturar pokemon
+
+        Arguments:
+            pokemon -- Informar o pokemon
+        """
+        pass
+
 
 class Player(Pessoa):
     """Player class
