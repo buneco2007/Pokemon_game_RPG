@@ -2,6 +2,9 @@
     """
 
 
+from typing import Any
+
+
 class Pessoa(object):
     """Classe mestre de pessoa
 
@@ -9,12 +12,29 @@ class Pessoa(object):
         object (_type_): _description_
     """
 
-    def __init__(self, pokemons, nome: str = None):
+    def __init__(self, nome: str = None, pokemons=None):
         if nome:
             self.nome = nome
         else:
             self.nome = 'Desconhecido'
-        self.pokemons = pokemons
+        if pokemons is None:
+            self.pokemons = list[Any]
 
     def __str__(self) -> str:
         return f'{self.nome}'
+
+
+class Player(Pessoa):
+    """Player class
+
+    Arguments:
+        Pessoa -- Filho da classe
+    """
+
+
+class NPC(Pessoa):
+    """NPC class
+
+    Arguments:
+        Pessoa -- Filho da classe
+    """
