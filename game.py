@@ -2,11 +2,11 @@
     """
 from pokemon import PokemonAco
 from pessoa import Player
+from items import MochilaGrande
 
 
 eu = Player('Fernando')
-mochila = eu.items[0]
+mochila = MochilaGrande()
 pokemon = PokemonAco('Metal')
 
-mochila.add_item('teste')
-print(mochila)
+mochila.mostrar_items()

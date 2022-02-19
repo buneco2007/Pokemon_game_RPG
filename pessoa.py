@@ -1,8 +1,6 @@
 """Modulo player
     """
 
-from items import MochilaPequena
-
 
 class Pessoa(object):
     """Classe mestre de pessoa
@@ -12,7 +10,6 @@ class Pessoa(object):
     """
 
     def __init__(self, nome: str = None, pokemons=None, items=None):
-        mochila: object = MochilaPequena()
         if nome:
             self.nome = nome
         else:
@@ -22,7 +19,7 @@ class Pessoa(object):
         else:
             self.pokemons = pokemons
         if items is None:
-            self.items: list = [mochila]
+            self.items: list = []
 
     def __str__(self) -> str:
         return f'{self.nome}'
@@ -48,6 +45,7 @@ class Player(Pessoa):
         """mostrar_items Metodo para mostrar todos os items
         """
         if self.items:
+            print(f'Items em posse de {self}')
             for item in self.items:
                 print(item)
         else:

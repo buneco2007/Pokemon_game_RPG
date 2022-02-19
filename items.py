@@ -37,6 +37,7 @@ class Mochila(object):
         """mostrar_items Metodo para mostrar todos items da mochila
         """
         if self.items:
+            print(f'Items na {self.nome}: ')
             for item in self.items:
                 print(item)
         else:
@@ -49,13 +50,39 @@ class MochilaPequena(Mochila):
     Arguments:
         Mochila -- Herda da classe master mochila
     """
-    nome = 'Mochila Pequena'
+    nome: str = 'Mochila Pequena'
     espacos: int = 10
+
+
+class MochilaMedia(Mochila):
+    """MochilaMedia Instancia uma mochila media
+
+    Arguments:
+        Mochila -- Herda da classe master mochila
+    """
+    nome: str = 'Mochila Media'
+    espacos: int = 20
+
+
+class MochilaGrande(Mochila):
+    """MochilaGrande Intancia uma mochila grande
+
+    Arguments:
+        Mochila -- herda da classe master mochila
+    """
+    nome: str = 'Mochila Grande'
+    espacos: int = 40
 
 
 class Pokebola(object):
     """Pokebola Classe mestre de pokebola
 
     Arguments:
-        object -- _description_
+        object -- Objeto
     """
+
+    def __init__(self, espacos: int = 1, item: None = None):
+        if espacos:
+            self.espacos = espacos
+        if item is None:
+            self.item: list = []
