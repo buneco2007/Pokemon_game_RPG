@@ -11,7 +11,7 @@ class Pokemon():
     def __init__(self, especie: str,
                  sangue: float = 100, lvl: int = 1, const: float = 1,
                  nome: str = None, ataque: float = 10, defesa: float = 2,
-                 tipo: str = tipos.Tipos.aco) -> None:
+                 tipo: str = tipos.Tipos.aco, dificuldade: float = 100) -> None:
         self.especie = especie.capitalize()
         self.ataque = ataque
         self.defesa = defesa
@@ -28,6 +28,8 @@ class Pokemon():
             self.sangue_maximo = self.sangue
         else:
             self.sangue_maximo = self.sangue
+        if dificuldade:
+            self.dificuldade = dificuldade
 
     def __str__(self) -> str:
         return f'{self.nome}({self.lvl}) {self.sangue}/{self.sangue_maximo}'
@@ -85,6 +87,14 @@ class Pokemon():
         if self.tipo in pokemon.fraco:
             return 0.5
         return 1
+
+    def ser_capturado(self, pokebola):
+        """ser_capturado Classe que determina a probabilidade
+        de ser capturado
+
+        Arguments:
+            pokebola -- Pokebola que sera usada
+        """
 
 
 class PokemonAco(Pokemon, classes.Aco):
