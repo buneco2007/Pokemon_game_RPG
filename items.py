@@ -18,6 +18,10 @@ class Mochila(object):
         else:
             self.items = items
 
+    def __str__(self) -> str:
+        ocupado = len(self.items)
+        return f'{self.nome} ({ocupado}/{self.espacos})'
+
     def add_item(self, item):
         """add_item Metodo para guardar item na mochila
 
@@ -48,6 +52,10 @@ class MochilaPequena(Mochila):
     nome = 'Mochila Pequena'
     espacos: int = 10
 
-    def __str__(self) -> str:
-        ocupado = len(self.items)
-        return f'{self.nome} {ocupado}/{self.espacos}'
+
+class Pokebola(object):
+    """Pokebola Classe mestre de pokebola
+
+    Arguments:
+        object -- _description_
+    """

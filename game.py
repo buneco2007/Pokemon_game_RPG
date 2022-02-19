@@ -5,6 +5,8 @@ from pessoa import Player
 
 
 eu = Player('Fernando')
+mochila = eu.items[0]
 pokemon = PokemonAco('Metal')
 
-eu.mostrar_items()
+mochila.add_item('teste')
+print(mochila)
