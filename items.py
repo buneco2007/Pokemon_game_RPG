@@ -2,9 +2,6 @@
     """
 
 
-from sys import float_info
-
-
 class Mochila(object):
     """Bag Classe master de mochila
 
@@ -84,13 +81,13 @@ class Pokebola(object):
         object -- Objeto
     """
 
-    def __init__(self, nome: str = 'Pokebola', espacos: int = 1, item: None = None,
+    def __init__(self, nome: str = 'Pokebola', espacos: int = 1, item: object = None,
                  probabilidade: float = 1):
         self.nome = nome
         if espacos:
             self.espacos = espacos
         if item is None:
-            self.item: list = []
+            self.item: object = item
         self.probabilidade = probabilidade
 
     def __str__(self) -> str:
@@ -105,3 +102,13 @@ class PokebolaPremium(Pokebola):
     """
     nome: str = 'Pokebola Premium'
     probabilidade: float = 1.5
+
+
+class PokebolaMaster(Pokebola):
+    """PokebolaPremium Classe de pokebola master
+
+    Arguments:
+        Pokebola -- Objeto
+    """
+    nome: str = 'Pokebola Master'
+    probabilidade: float = 1000000
