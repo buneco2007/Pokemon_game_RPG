@@ -88,13 +88,23 @@ class Pokemon():
             return 0.5
         return 1
 
-    def ser_capturado(self, pokebola):
+    def ser_capturado(self, pokebola) -> bool:
         """ser_capturado Classe que determina a probabilidade
         de ser capturado
 
         Arguments:
             pokebola -- Pokebola que sera usada
         """
+        porcentagem_sangue = (self.sangue * 100) / self.sangue_maximo
+        if porcentagem_sangue < 25:
+            self.dificuldade = self.dificuldade / 3
+        elif porcentagem_sangue > 25 and porcentagem_sangue < 80:
+            self.dificuldade = self.dificuldade / 2
+        else:
+            self.dificuldade = self.dificuldade
+        if self.dificuldade > pokebola.probabilidade:
+            return True
+        return False
 
 
 class PokemonAco(Pokemon, classes.Aco):
