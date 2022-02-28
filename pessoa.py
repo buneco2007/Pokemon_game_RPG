@@ -32,14 +32,17 @@ class Player(Pessoa):
         Pessoa -- Filho da classe
     """
 
-    def capturar(self, pokemon):
+    def capturar(self, pokemon, pokebola):
         """capturar Funcao para capturar pokemon
 
         Arguments:
             pokemon -- Informar o pokemon
         """
-        self.pokemons.append(pokemon)
-        print(f'{self} capturou {pokemon}!')
+        if pokemon.ser_capturado(pokebola):
+            pokebola.add_item(pokemon)
+            print(f'{self} capturou {pokemon}!')
+        else:
+            print(f'Falha em capturar o pokemon {pokemon}')
 
     def mostrar_items(self):
         """mostrar_items Metodo para mostrar todos os items

@@ -29,6 +29,7 @@ class Pokemon():
         else:
             self.sangue_maximo = self.sangue
         if dificuldade:
+            self.dificuldade_base = dificuldade
             self.dificuldade = dificuldade
 
     def __str__(self) -> str:
@@ -51,7 +52,17 @@ class Pokemon():
             print('Seu ataque efetou normalmente!!')
         else:
             print('Seu ataque eh muito efetivo!!!')
-        print(efetivi)
+
+    def alterar_dificuldade(self):
+        """alterar_dificuldade Altera a dificuldade de captura do pokemon
+        """
+        porcentagem_sangue = (self.sangue * 100) / self.sangue_maximo
+        if porcentagem_sangue < 25:
+            self.dificuldade = self.dificuldade_base / 3
+        elif porcentagem_sangue > 25 and porcentagem_sangue < 80:
+            self.dificuldade = self.dificuldade_base / 2
+        else:
+            self.dificuldade = self.dificuldade_base
 
     def receber_dano(self, dano: float, efetividade: float):
         """[Funcao para receber dano]
@@ -62,6 +73,7 @@ class Pokemon():
         calculo: float = (dano - self.defesa) * efetividade
         self.sangue = self.sangue - calculo
         print(f'{self.especie} recebeu {calculo} de dano!!!')
+        self.alterar_dificuldade()
 
     def descansar(self):
         """Descansar e encher HP
@@ -95,16 +107,9 @@ class Pokemon():
         Arguments:
             pokebola -- Pokebola que sera usada
         """
-        porcentagem_sangue = (self.sangue * 100) / self.sangue_maximo
-        if porcentagem_sangue < 25:
-            self.dificuldade = self.dificuldade / 3
-        elif porcentagem_sangue > 25 and porcentagem_sangue < 80:
-            self.dificuldade = self.dificuldade / 2
-        else:
-            self.dificuldade = self.dificuldade
         if self.dificuldade > pokebola.probabilidade:
-            return True
-        return False
+            return False
+        return True
 
 
 class PokemonAco(Pokemon, classes.Aco):

@@ -1,14 +1,14 @@
 """ Modulo principal do jogo
     """
-from pokemon import PokemonAco
+from pokemon import PokemonAco, PokemonBicho
 from pessoa import Player
-from items import MochilaGrande, Pokebola
+from items import MochilaGrande, PokebolaPremium
 
 
 eu = Player('Fernando')
 mochila = MochilaGrande()
-pokebola = Pokebola()
+pokebola = PokebolaPremium()
 pokemon = PokemonAco('Metal')
+amigo_pokemon = PokemonBicho('Bicho')
 
-mochila.add_item(pokebola)
-mochila.mostrar_items()
+print(mochila)

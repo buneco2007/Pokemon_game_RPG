@@ -9,14 +9,11 @@ class Mochila(object):
         object -- Objeto
     """
 
-    def __init__(self, nome: str = 'Mochila', espacos: int = 5,
-                 items=None):
+    def __init__(self, nome: str = 'Mochila', espacos: int = 5, items=None):
         self.nome = nome
         self.espacos = espacos
         if items is None:
-            self.items = []
-        else:
-            self.items = items
+            self.items: list = []
 
     def __str__(self) -> str:
         ocupado = len(self.items)
@@ -60,35 +57,53 @@ class MochilaMedia(Mochila):
     Arguments:
         Mochila -- Herda da classe master mochila
     """
-    nome: str = 'Mochila Media'
+    nome = 'Mochila Media'
     espacos: int = 20
 
 
 class MochilaGrande(Mochila):
-    """MochilaGrande Intancia uma mochila grande
+    """MochilaGrande Instancia uma mochila grande
 
     Arguments:
-        Mochila -- herda da classe master mochila
+        Mochila -- Herda da classe master mochila
     """
-    nome: str = 'Mochila Grande'
-    espacos: int = 40
+    nome = 'Mochila Grande'
+    espacos = 40
 
 
-class Pokebola(object):
+class Pokebola():
     """Pokebola Classe mestre de pokebola
 
     Arguments:
         object -- Objeto
     """
 
-    def __init__(self, nome: str = 'Pokebola', espacos: int = 1, item: object = None,
+    def __init__(self, nome: str = 'Pokebola', espacos: int = 1, item: list = None,
                  probabilidade: float = 1):
         self.nome = nome
         if espacos:
             self.espacos = espacos
         if item is None:
-            self.item: object = item
+            self.item: list = []
         self.probabilidade = probabilidade
+
+    def add_pokemon(self, pokemon):
+        """add_pokemon Método para diconar pokemon na pokebola
+
+        Arguments:
+            pokemon -- Pokemon literalmente
+        """
+        if self.espacos < 1:
+            return False
+        else:
+            self.item.append(pokemon)
+
+    def remover_pokemon(self):
+        """remover_pokemon Metodo para remover
+        pokemon da pokebola
+        """
+        if self.item:
+            self.item.clear()
 
     def __str__(self) -> str:
         return f'{self.nome}'
@@ -101,7 +116,7 @@ class PokebolaPremium(Pokebola):
         Pokebola -- Objeto
     """
     nome: str = 'Pokebola Premium'
-    probabilidade: float = 1.5
+    probabilidade: float = 100
 
 
 class PokebolaMaster(Pokebola):
@@ -111,4 +126,4 @@ class PokebolaMaster(Pokebola):
         Pokebola -- Objeto
     """
     nome: str = 'Pokebola Master'
-    probabilidade: float = 1000000
+    probabilidade: float = 500
