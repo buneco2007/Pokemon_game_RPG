@@ -2,6 +2,9 @@
     """
 
 
+from typing import Any
+
+
 class Pessoa(object):
     """Classe mestre de pessoa
 
@@ -16,8 +19,6 @@ class Pessoa(object):
             self.nome = 'Desconhecido'
         if pokemons is None:
             self.pokemons: list = []
-        else:
-            self.pokemons = pokemons
         if items is None:
             self.items: list = []
 
@@ -32,7 +33,7 @@ class Player(Pessoa):
         Pessoa -- Filho da classe
     """
 
-    def capturar(self, pokemon, pokebola):
+    def capturar(self, pokemon: Any, pokebola: Any) -> None:
         """capturar Funcao para capturar pokemon
 
         Arguments:
@@ -44,7 +45,7 @@ class Player(Pessoa):
         else:
             print(f'Falha em capturar o pokemon {pokemon}')
 
-    def mostrar_items(self):
+    def mostrar_items(self) -> None:
         """mostrar_items Metodo para mostrar todos os items
         """
         if self.items:
@@ -54,15 +55,16 @@ class Player(Pessoa):
         else:
             print(f'{self.nome} nao tem nenhum item em sua posse!!!')
 
-    def add_item_mochila(self, item, mochila):
+    def add_item_mochila(self, item: Any, mochila: Any) -> None:
         """add_item_mochila Metodo para adicionar item na mochila
 
         Arguments:
             item -- _description_
         """
         mochila.add_item(item)
+        print(f'{item} adicionado com sucesso na mochila!!!')
 
-    def mostrar_pokemons(self):
+    def mostrar_pokemons(self) -> None:
         """mostrar_pokemons Funcao para mostrar os pokemons
 
         Returns:

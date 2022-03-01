@@ -1,5 +1,6 @@
 """Modulo de pokemons"""
 
+from typing import Any
 import tipos
 import classes
 
@@ -35,7 +36,7 @@ class Pokemon():
     def __str__(self) -> str:
         return f'{self.nome}({self.lvl}) {self.sangue}/{self.sangue_maximo}'
 
-    def atacar(self, pokemon):
+    def atacar(self, pokemon: Any) -> None:
         """[Funcao para atacar]
 
         Args:
@@ -53,18 +54,7 @@ class Pokemon():
         else:
             print('Seu ataque eh muito efetivo!!!')
 
-    def alterar_dificuldade(self):
-        """alterar_dificuldade Altera a dificuldade de captura do pokemon
-        """
-        porcentagem_sangue = (self.sangue * 100) / self.sangue_maximo
-        if porcentagem_sangue < 25:
-            self.dificuldade = self.dificuldade_base / 3
-        elif porcentagem_sangue > 25 and porcentagem_sangue < 80:
-            self.dificuldade = self.dificuldade_base / 2
-        else:
-            self.dificuldade = self.dificuldade_base
-
-    def receber_dano(self, dano: float, efetividade: float):
+    def receber_dano(self, dano: float, efetividade: float) -> None:
         """[Funcao para receber dano]
 
         Args:
@@ -75,7 +65,18 @@ class Pokemon():
         print(f'{self.especie} recebeu {calculo} de dano!!!')
         self.alterar_dificuldade()
 
-    def descansar(self):
+    def alterar_dificuldade(self) -> None:
+        """alterar_dificuldade Altera a dificuldade de captura do pokemon
+        """
+        porcentagem_sangue: float = (self.sangue * 100) / self.sangue_maximo
+        if porcentagem_sangue < 25:
+            self.dificuldade = self.dificuldade_base / 3
+        elif porcentagem_sangue > 25 and porcentagem_sangue < 80:
+            self.dificuldade = self.dificuldade_base / 2
+        else:
+            self.dificuldade = self.dificuldade_base
+
+    def descansar(self) -> None:
         """Descansar e encher HP
         """
         valor_cura: float = (self.sangue / 10) * 1
@@ -86,7 +87,7 @@ class Pokemon():
             self.sangue += valor_cura
         print(f'{self.especie} descansou e curou {valor_cura}!')
 
-    def efetividade(self, pokemon) -> float:
+    def efetividade(self, pokemon: Any) -> float:
         """Metodo para teste de efetividade de ataque
 
         Args:

@@ -9,7 +9,7 @@ class Mochila(object):
         object -- Objeto
     """
 
-    def __init__(self, nome: str = 'Mochila', espacos: int = 5, items=None):
+    def __init__(self, nome: str = 'Mochila', espacos: int = 1, items=None):
         self.nome = nome
         self.espacos = espacos
         if items is None:
@@ -47,8 +47,11 @@ class MochilaPequena(Mochila):
     Arguments:
         Mochila -- Herda da classe master mochila
     """
-    nome: str = 'Mochila Pequena'
-    espacos: int = 10
+
+    def __init__(self):
+        super().__init__(self)
+        self.nome = 'Mochila Pequena'
+        self.espacos = 5
 
 
 class MochilaMedia(Mochila):
@@ -57,8 +60,11 @@ class MochilaMedia(Mochila):
     Arguments:
         Mochila -- Herda da classe master mochila
     """
-    nome = 'Mochila Media'
-    espacos: int = 20
+
+    def __init__(self):
+        super().__init__(self)
+        self.nome = 'Mochila Pequena'
+        self.espacos = 15
 
 
 class MochilaGrande(Mochila):
@@ -67,8 +73,11 @@ class MochilaGrande(Mochila):
     Arguments:
         Mochila -- Herda da classe master mochila
     """
-    nome = 'Mochila Grande'
-    espacos = 40
+
+    def __init__(self):
+        super().__init__(self)
+        self.nome = 'Mochila Pequena'
+        self.espacos = 30
 
 
 class Pokebola():
@@ -79,7 +88,7 @@ class Pokebola():
     """
 
     def __init__(self, nome: str = 'Pokebola', espacos: int = 1, item: list = None,
-                 probabilidade: float = 1):
+                 probabilidade: float = 100):
         self.nome = nome
         if espacos:
             self.espacos = espacos

@@ -2,11 +2,11 @@
     """
 from pokemon import PokemonAco, PokemonBicho
 from pessoa import Player
-from items import MochilaGrande, PokebolaPremium
+from items import MochilaPequena, PokebolaPremium
 
 
 eu = Player('Fernando')
-mochila = MochilaGrande()
+mochila = MochilaPequena()
 pokebola = PokebolaPremium()
 pokemon = PokemonAco('Metal')
 amigo_pokemon = PokemonBicho('Bicho')
