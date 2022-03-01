@@ -2,6 +2,9 @@
     """
 
 
+from typing import Any
+
+
 class Mochila(object):
     """Bag Classe master de mochila
 
@@ -19,7 +22,7 @@ class Mochila(object):
         ocupado = len(self.items)
         return f'{self.nome} ({ocupado}/{self.espacos})'
 
-    def add_item(self, item):
+    def add_item(self, item: Any) -> None:
         """add_item Metodo para guardar item na mochila
 
         Arguments:
@@ -30,7 +33,7 @@ class Mochila(object):
         else:
             print(f'A {self.nome} nao tem espaco suficiente!!!')
 
-    def mostrar_items(self):
+    def mostrar_items(self) -> None:
         """mostrar_items Metodo para mostrar todos items da mochila
         """
         if self.items:
@@ -96,14 +99,17 @@ class Pokebola():
             self.item: list = []
         self.probabilidade = probabilidade
 
-    def add_pokemon(self, pokemon):
+    def __str__(self) -> str:
+        return f'{self.nome}'
+
+    def add_pokemon(self, pokemon: Any) -> None:
         """add_pokemon Método para diconar pokemon na pokebola
 
         Arguments:
             pokemon -- Pokemon literalmente
         """
         if self.espacos < 1:
-            return False
+            print(f'A pokebola ja tem o pokemon "{self.item[0]}" dentro!')
         else:
             self.item.append(pokemon)
 
@@ -114,9 +120,6 @@ class Pokebola():
         if self.item:
             self.item.clear()
 
-    def __str__(self) -> str:
-        return f'{self.nome}'
-
 
 class PokebolaPremium(Pokebola):
     """PokebolaPremium Classe de pokebola premium
@@ -124,8 +127,11 @@ class PokebolaPremium(Pokebola):
     Arguments:
         Pokebola -- Objeto
     """
-    nome: str = 'Pokebola Premium'
-    probabilidade: float = 100
+
+    def __init__(self):
+        super().__init__(self)
+        self.nome: str = 'Pokebola Premium'
+        self.probabilidade: float = 100
 
 
 class PokebolaMaster(Pokebola):
@@ -134,5 +140,8 @@ class PokebolaMaster(Pokebola):
     Arguments:
         Pokebola -- Objeto
     """
-    nome: str = 'Pokebola Master'
-    probabilidade: float = 500
+
+    def __init__(self):
+        super().__init__(self)
+        self.nome: str = 'Pokebola Master'
+        self.probabilidade: float = 500
