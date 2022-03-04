@@ -11,7 +11,7 @@ class Erro(object):
         object -- Object
     """
     @staticmethod
-    def error_001(pokemon: Type[Pokemon]):
+    def error_001(pokemon: Pokemon):
         """error_001 Erro de captura de pokemon
 
         Arguments:
@@ -27,7 +27,7 @@ class Sucesso(object):
         object -- Object
     """
     @staticmethod
-    def sucesso_001(nome: str, pokemon: Type[Pokemon]):
+    def sucesso_001(nome: str, pokemon: Pokemon):
         """sucesso_001 Capturado com sucesso.
         """
         print(f'{nome} capturou {pokemon}')

@@ -3,7 +3,9 @@
 
 
 from typing import Any, Type
+from items import Pokebola, PokebolaPremium
 from mensagens import Erro, Sucesso
+from pokemon import Pokemon, PokemonAco
 
 
 class Pessoa(object):
@@ -34,14 +36,14 @@ class Player(Pessoa):
         Pessoa -- Filho da classe
     """
 
-    def capturar(self, pokemon: Type[Any], pokebola: Type[Any]) -> None:
+    def capturar(self, pokemon: Pokemon, pokebola: Pokebola) -> None:
         """capturar Funcao para capturar pokemon
 
         Arguments:
             pokemon -- Informar o pokemon
         """
         if pokemon.ser_capturado(pokebola):
-            pokebola.add_item(pokemon)
+            pokebola.add_pokemon(pokemon)
             Sucesso.sucesso_001(self.nome, pokemon)
         else:
             Erro.error_001(pokemon)

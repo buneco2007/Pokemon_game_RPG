@@ -4,6 +4,8 @@
 
 from typing import Any
 
+from pokemon import Pokemon
+
 
 class Mochila(object):
     """Bag Classe master de mochila
@@ -102,7 +104,7 @@ class Pokebola():
     def __str__(self) -> str:
         return f'{self.nome}'
 
-    def add_pokemon(self, pokemon: Any) -> None:
+    def add_pokemon(self, pokemon: Pokemon) -> None:
         """add_pokemon Método para diconar pokemon na pokebola
 
         Arguments:
