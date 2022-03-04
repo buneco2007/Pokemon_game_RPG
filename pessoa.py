@@ -4,7 +4,7 @@
 
 from typing import Any
 from items import Pokebola
-from mensagens import Erro, Sucesso
+from mensagens import Erro, Geral, Sucesso
 from pokemon import Pokemon
 
 
@@ -52,7 +52,7 @@ class Player(Pessoa):
         """mostrar_items Metodo para mostrar todos os items
         """
         if self.items:
-            print(f'Items em posse de {self}')
+            Geral.geral_001(self.nome)
             for item in self.items:
                 print(item)
         else:

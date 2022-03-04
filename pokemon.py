@@ -1,7 +1,7 @@
 """Modulo de pokemons"""
 
 from typing import Any
-from items import Pokebola
+
 import tipos
 import classes
 
@@ -102,7 +102,7 @@ class Pokemon():
             return 0.5
         return 1
 
-    def ser_capturado(self, pokebola: Pokebola) -> bool:
+    def ser_capturado(self, pokebola: Any) -> bool:
         """ser_capturado Classe que determina a probabilidade
         de ser capturado
 
