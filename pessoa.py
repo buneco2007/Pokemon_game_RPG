@@ -2,10 +2,10 @@
     """
 
 
-from typing import Any, Type
-from items import Pokebola, PokebolaPremium
+from typing import Any
+from items import Pokebola
 from mensagens import Erro, Sucesso
-from pokemon import Pokemon, PokemonAco
+from pokemon import Pokemon
 
 
 class Pessoa(object):
