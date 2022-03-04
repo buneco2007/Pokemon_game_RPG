@@ -2,7 +2,8 @@
     """
 
 
-from typing import Any
+from typing import Any, Type
+from mensagens import Erro, Sucesso
 
 
 class Pessoa(object):
@@ -33,7 +34,7 @@ class Player(Pessoa):
         Pessoa -- Filho da classe
     """
 
-    def capturar(self, pokemon: Any, pokebola: Any) -> None:
+    def capturar(self, pokemon: Type[Any], pokebola: Type[Any]) -> None:
         """capturar Funcao para capturar pokemon
 
         Arguments:
@@ -41,9 +42,9 @@ class Player(Pessoa):
         """
         if pokemon.ser_capturado(pokebola):
             pokebola.add_item(pokemon)
-            print(f'{self} capturou {pokemon}!')
+            Sucesso.sucesso_001(self.nome, pokemon)
         else:
-            print(f'Falha em capturar o pokemon {pokemon}')
+            Erro.error_001(pokemon)
 
     def mostrar_items(self) -> None:
         """mostrar_items Metodo para mostrar todos os items
