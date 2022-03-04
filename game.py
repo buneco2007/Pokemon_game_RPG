@@ -11,4 +11,6 @@ pokebola = PokebolaPremium()
 pokemon = PokemonAco('Metal')
 amigo_pokemon = PokemonBicho('Bicho')
 
-print(mochila)
+eu.pegar_item(mochila)
+eu.add_item_mochila(pokebola, mochila)
+eu.mostrar_items()

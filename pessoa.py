@@ -55,6 +55,15 @@ class Player(Pessoa):
         else:
             print(f'{self.nome} nao tem nenhum item em sua posse!!!')
 
+    def pegar_item(self, item: Any) -> None:
+        """pegar_item Metodo para pegar um item
+
+        Arguments:
+            item -- Item qualquer
+        """
+        self.items.append(item)
+        print(f'{self} pegou com sucesso {item}')
+
     def add_item_mochila(self, item: Any, mochila: Any) -> None:
         """add_item_mochila Metodo para adicionar item na mochila
 
